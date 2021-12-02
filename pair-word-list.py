@@ -25,8 +25,8 @@ target_list = list(input("target = "))
 # Check user input lenght data
 word_list_new = []
 target_list_new = []
-if len(word_list) % 2 != 0:
-    print("Please fill in the number of data in even numbers.")
+if len(word_list) % 2 != 0 or len(target_list) % 2 != 0:
+    print("output = None")
 else:
     # Convert a list with strings all to lowercase
     word_list_lowercase = [w_lowercase.lower() for w_lowercase in word_list]
@@ -36,14 +36,14 @@ else:
     word_list_new = setListData(word_list_lowercase)
     target_list_new = setListData(target_list)
 
-# Set distinct target data for function pair list
-targer_distinct = list(set(target_list_new))
+    # Set distinct target data for function pair list
+    targer_distinct = list(set(target_list_new))
 
-# Finish pair list data
-pair_list = solve(word_list_new , targer_distinct)
+    # Finish pair list data
+    pair_list = solve(word_list_new , targer_distinct)
 
-# Last check pair list more than 1 words
-if(len(pair_list) > 1):
-    print("output = " + str(pair_list))
-else:
-    print("output = None")
+    # Last check pair list more than 1 words
+    if(len(pair_list) > 1):
+        print("output = " + str(pair_list))
+    else:
+        print("output = None")
